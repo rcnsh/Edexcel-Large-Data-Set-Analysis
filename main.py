@@ -1,0 +1,37 @@
+from modules.viewdata import viewdata
+from modules.generatedata import generatedata
+from modules.askuser import askuser
+from modules.calculateaverages import calculate_averages
+
+data1 = []
+data2 = []
+
+while True:
+    print('1. View data')
+    print('2. Generate random data and save in memory')
+    print('3. Calculate averages')
+    print('4. Analyse generated data')
+    print('5. Read analysis')
+    print('6. Exit\n')
+
+    choice = input('Enter your choice: ')
+    if choice == '1':
+        userResponse = askuser()
+        viewdata(userResponse[0], userResponse[1], userResponse[2])
+    elif choice == '2':
+        got_data = generatedata(data1, data2)
+        data1 = got_data[0]
+        data2 = got_data[1]
+    elif choice == '3':
+        calculate_averages(data1, data2)
+    elif choice == '4':
+        if len(data1) == 0 or len(data2) == 0:
+            print('You need to generate data first')
+        else:
+            analyse_generated_data(data1, data2)
+    elif choice == '5':
+        read_analysis()
+    elif choice == '6':
+        print('Data1: ' + str(data1))
+        print('Data2: ' + str(data2))
+
