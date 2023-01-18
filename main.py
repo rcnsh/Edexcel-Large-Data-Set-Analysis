@@ -2,6 +2,7 @@ from modules.viewdata import viewdata
 from modules.generatedata import generatedata
 from modules.askuser import askuser
 from modules.calculateaverages import calculate_averages
+from modules.analysegenerateddata import analyse_generated_data
 
 data1 = []
 data2 = []
@@ -22,13 +23,20 @@ while True:
         got_data = generatedata(data1, data2)
         data1 = got_data[0]
         data2 = got_data[1]
+        data1name = got_data[2]
+        data2name = got_data[3]
+        date1 = got_data[4]
+        date2 = got_data[5]
     elif choice == '3':
-        calculate_averages(data1, data2)
+        if len(data1) == 0 or len(data2) == 0:
+            print('You need to generate data first')
+        else:
+            calculate_averages(data1, data2)
     elif choice == '4':
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
         else:
-            analyse_generated_data(data1, data2)
+            analyse_generated_data(data1, data2, data1name, data2name, date1)
     elif choice == '5':
         read_analysis()
     elif choice == '6':
