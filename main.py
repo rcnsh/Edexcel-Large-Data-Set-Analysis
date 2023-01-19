@@ -36,10 +36,9 @@ while True:
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
         else:
-            analyse_generated_data(data1, data2, data1name, data2name, date1)
+            analyse_generated_data(data1, data2, data1name, data2name, date1, date2)
     elif choice == '5':
         read_analysis()
     elif choice == '6':
         print('Data1: ' + str(data1))
         print('Data2: ' + str(data2))
-

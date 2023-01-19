@@ -1,11 +1,11 @@
-def analyse_generated_data(data1, data2, data1name, data2name, date):
+def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
     import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
     # date formatting
 
-    for i in range(len(date)):
-        date[i] = str(date[i])
+    for i in range(len(date1)):
+        date1[i] = str(date1[i])
 
     for i in range(1, len(data1)):
         data1[i] = float(data1[i])
@@ -13,12 +13,23 @@ def analyse_generated_data(data1, data2, data1name, data2name, date):
     for i in range(1, len(data2)):
         data2[i] = float(data2[i])
 
-    for i in range(len(date)):
-        date[i] = date[i].replace(', ', '-')
-        date[i] = date[i].replace('datetime.datetime(', '')
-        date[i] = date[i].replace('0, 0)', '')
-        date[i] = date[i].replace(' 00:00:00', '')
-        print(date[i])
+    for i in range(len(date1)):
+        date1[i] = date1[i].replace(', ', '-')
+        date1[i] = date1[i].replace('datetime.datetime(', '')
+        date1[i] = date1[i].replace('0, 0)', '')
+        date1[i] = date1[i].replace(' 00:00:00', '')
+        print(date1[i])
+
+    for i in range(len(date2)):
+        date2[i] = str(date2[i])
+
+    for i in range(len(date2)):
+        date2[i] = date2[i].replace(', ', '-')
+        date2[i] = date2[i].replace('datetime.datetime(', '')
+        date2[i] = date2[i].replace('0, 0)', '')
+        date2[i] = date2[i].replace(' 00:00:00', '')
+        print(date1[i])
+
 
 
 
@@ -34,10 +45,11 @@ def analyse_generated_data(data1, data2, data1name, data2name, date):
     ask = int(input(""))
     if ask == 1:
 
-        date = pd.to_datetime(date)
+        date1 = pd.to_datetime(date1)
+        date2 = pd.to_datetime(date2)
 
         fig, ax1 = plt.subplots()
-        ax1.plot_date(date, data1, 'k-')
+        ax1.plot(date1, data1)
         plt.gcf().autofmt_xdate()
         plt.title(f'Plot of {data1name} against time.')
         plt.xlabel("Timestamp")
@@ -45,7 +57,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date):
         plt.show()
 
         fig, ax2 = plt.subplots()
-        ax2.plot_date(date, data2, 'k-')
+        ax2.plot_date(date2, data2, 'k-')
         plt.gcf().autofmt_xdate()
         plt.title(f'Plot of {data2name} against time.')
         plt.xlabel("Timestamp")
@@ -53,7 +65,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date):
         plt.show()
     if ask == 2:
 
-        x = np.arange(len(date))  # the label locations
+        x = np.arange(len(date1))  # the label locations
         width = 0.35  # the width of the bars
 
         fig, ax = plt.subplots()
@@ -63,7 +75,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date):
         # Add some text for labels, title and custom x-axis tick labels, etc.
         ax.set_ylabel(f"{data1name} in blue, {data2name}, in orange.")
         ax.set_title(f'Plot of Data1 and Data2 over time')
-        ax.set_xticks(x, date)
+        ax.set_xticks(x, date1)
         ax.legend()
 
         ax.bar_label(rects1, padding=3,)

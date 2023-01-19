@@ -163,6 +163,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -200,6 +201,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -223,6 +225,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -241,6 +244,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -259,6 +263,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -277,6 +282,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -295,6 +301,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -313,6 +320,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -331,6 +339,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
@@ -356,6 +365,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -374,6 +384,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -390,6 +401,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
@@ -408,6 +420,7 @@ def generatedata(data1, data2):
                         print("WARNING: n/a value found. This may mess up your data.")
                         continue
                     data = data.replace(' ', '.')
+                    data = float(data)
                     print(data)
                     if i == 0:
                         data1.append(data)
