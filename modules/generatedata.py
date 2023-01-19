@@ -9,6 +9,10 @@ def generatedata(data1, data2):
     wb = openpyxl.load_workbook(filename='data/large-dataset.xlsx')
     dataquantity = int(input('Enter the number of data points to generate: '))
     offset = (183 // dataquantity) - 1
+    data1 = []
+    data2 = []
+    data1name = ""
+    data2name = ""
     date1 = []
     date2 = []
 
@@ -177,6 +181,7 @@ def generatedata(data1, data2):
                     print("WARNING: n/a value found. This may mess up your data.")
                     continue
                 data = data.replace(' ', '.')
+                data = float(data)
                 print(data)
                 if i == 0:
                     data1.append(data)
