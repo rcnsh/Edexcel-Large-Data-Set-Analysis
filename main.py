@@ -3,6 +3,9 @@ from modules.generatedata import generatedata
 from modules.askuser import askuser
 from modules.calculateaverages import calculate_averages
 from modules.analysegenerateddata import analyse_generated_data
+from rich import print
+from rich import pretty
+pretty.install()
 
 data1 = []
 data2 = []
@@ -31,7 +34,7 @@ while True:
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
         else:
-            calculate_averages(data1, data2)
+            calculate_averages(data1, data2, data1name, data2name)
     elif choice == '4':
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
@@ -40,5 +43,4 @@ while True:
     elif choice == '5':
         read_analysis()
     elif choice == '6':
-        print('Data1: ' + str(data1))
-        print('Data2: ' + str(data2))
+        break

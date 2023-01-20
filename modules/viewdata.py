@@ -1,4 +1,7 @@
 def viewdata(location, type, bonus):
+    from rich import print
+    from rich import pretty
+    pretty.install()
     global sheet_ranges
     from modules import vars
     import openpyxl

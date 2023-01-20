@@ -1,4 +1,7 @@
 def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
+    from rich import print
+    from rich import pretty
+    pretty.install()
     import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
@@ -54,7 +57,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         plt.title(f'Plot of {data1name} against time.')
         plt.xlabel("Timestamp")
         plt.ylabel(f"{data1name}")
-        plt.show()
+        fig.canvas.manager.set_window_title(f'Plot of {data1name} against time.')
 
         fig, ax2 = plt.subplots()
         ax2.plot_date(date2, data2, 'k-')
@@ -62,6 +65,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         plt.title(f'Plot of {data2name} against time.')
         plt.xlabel("Timestamp")
         plt.ylabel(f"{data2name}")
+        fig.canvas.manager.set_window_title(f'Plot of {data2name} against time.')
         plt.show()
     if ask == 2:
 
@@ -78,7 +82,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         ax.set_xticks(x, date1)
         ax.legend()
 
-        ax.bar_label(rects1, padding=3,)
+        ax.bar_label(rects1, padding=3)
         ax.bar_label(rects2, padding=3)
 
         fig.tight_layout()

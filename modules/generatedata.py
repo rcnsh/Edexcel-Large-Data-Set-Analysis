@@ -1,4 +1,7 @@
 def generatedata(data1, data2):
+    from rich import pretty
+    from rich import print
+    pretty.install()
 
     # declare variables and import modules and packages
     global sheet_ranges
@@ -154,9 +157,9 @@ def generatedata(data1, data2):
         choice2 = int(input('Enter your choice: '))
         if choice2 == 1:
             if i == 0:
-                data1name = data1name + ' Mean temperature'
+                data1name = data1name + ' Mean temperature (C)'
             elif i == 1:
-                data2name = data2name + ' Mean temperature'
+                data2name = data2name + ' Mean temperature (C)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['B' + str(j)].value)
                 if data == 'n/a':
@@ -173,9 +176,9 @@ def generatedata(data1, data2):
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 2:
             if i == 0:
-                data1name = data1name + ' Total Rainfall'
+                data1name = data1name + ' Total Rainfall (mm)'
             elif i == 1:
-                data2name = data2name + ' Total Rainfall'
+                data2name = data2name + ' Total Rainfall (mm)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['C' + str(j)].value)
                 if data == 'n/a':
@@ -192,9 +195,9 @@ def generatedata(data1, data2):
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 3:
             if i == 0:
-                data1name = data1name + ' Total Sunshine'
+                data1name = data1name + ' Total Sunshine (hours)'
             elif i == 1:
-                data2name = data2name + ' Total Sunshine'
+                data2name = data2name + ' Total Sunshine (hours)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['D' + str(j)].value)
                 if data == 'n/a':
@@ -216,9 +219,9 @@ def generatedata(data1, data2):
             choice3 = int(input('Enter your choice: '))
             if choice3 == 1:
                 if i == 0:
-                    data1name = data1name + ' Mean wind speed'
+                    data1name = data1name + ' Mean wind speed (kn)'
                 elif i == 1:
-                    data2name = data2name + ' Mean wind speed'
+                    data2name = data2name + ' Mean wind speed (kn)'
                 for j in range(7, 190, offset):
                     data = str(sheet_ranges['E' + str(j)].value)
                     if data == 'n/a':
@@ -254,9 +257,9 @@ def generatedata(data1, data2):
                         date2.append(sheet_ranges.cell(row=j, column=1).value)
             elif choice3 == 3:
                 if i == 0:
-                    data1name = data1name + ' Mean wind gust'
+                    data1name = data1name + ' Mean wind gust (kn)'
                 elif i == 1:
-                    data2name = data2name + ' Mean wind gust'
+                    data2name = data2name + ' Mean wind gust (kn)'
                 for j in range(7, 190, offset):
                     data = str(sheet_ranges['G' + str(j)].value)
                     if data == 'n/a':
@@ -273,9 +276,9 @@ def generatedata(data1, data2):
                         date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 5:
             if i == 0:
-                data1name = data1name + ' Relative humidity'
+                data1name = data1name + ' Relative humidity (%)'
             elif i == 1:
-                data2name = data2name + ' Relative humidity'
+                data2name = data2name + ' Relative humidity (%)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['H' + str(j)].value)
                 if data == 'n/a':
@@ -292,9 +295,9 @@ def generatedata(data1, data2):
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 6:
             if i == 0:
-                data1name = data1name + ' Mean cloud cover'
+                data1name = data1name + ' Mean cloud cover (oktas)'
             elif i == 1:
-                data2name = data2name + ' Mean cloud cover'
+                data2name = data2name + ' Mean cloud cover (oktas)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['I' + str(j)].value)
                 if data == 'n/a':
@@ -311,9 +314,9 @@ def generatedata(data1, data2):
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 7:
             if i == 0:
-                data1name = data1name + ' Mean visibility'
+                data1name = data1name + ' Mean visibility (dam)'
             elif i == 1:
-                data2name = data2name + ' Mean visibility'
+                data2name = data2name + ' Mean visibility (dam)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['J' + str(j)].value)
                 if data == 'n/a':
@@ -330,9 +333,9 @@ def generatedata(data1, data2):
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 8:
             if i == 0:
-                data1name = data1name + ' Mean pressure'
+                data1name = data1name + ' Mean pressure (hPa)'
             elif i == 1:
-                data2name = data2name + ' Mean pressure'
+                data2name = data2name + ' Mean pressure (hPa)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['K' + str(j)].value)
                 if data == 'n/a':

@@ -1,4 +1,7 @@
 def askuser():
+    from rich import print
+    from rich import pretty
+    pretty.install()
     print('Choose a location from the options below: ')
     print('1. Cambourne, United Kingdom (1987)')
     print('2. Heathrow, United Kingdom (1987)')
