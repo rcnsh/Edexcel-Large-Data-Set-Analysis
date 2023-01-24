@@ -26,4 +26,3 @@ def calculate_averages(data1, data2, data1name, data2name):
     print(f'Standard deviation of {data2namepart2} at {data2namepart2}: ' + str(stdev(data2)))
     print(f'Mode of {data1namepart2} at {data1namepart1}: ' + str(mode(data1)))
     print(f'Mode of {data2namepart2} at {data2namepart1}: ' + str(mode(data2)))
-    print(f'Correlation of data1 and data2: ' + str(correlation(data1, data2)))
