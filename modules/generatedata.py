@@ -1,6 +1,7 @@
 def generatedata(data1, data2):
     from rich import pretty
     from rich import print
+    import click
     pretty.install()
 
     # declare variables and import modules and packages
@@ -11,6 +12,7 @@ def generatedata(data1, data2):
     import openpyxl
     wb = openpyxl.load_workbook(filename='data/large-dataset.xlsx')
     dataquantity = int(input('Enter the number of data points to generate: '))
+    click.clear()
     offset = (183 // dataquantity) - 1
     data1 = []
     data2 = []
@@ -36,6 +38,7 @@ def generatedata(data1, data2):
             return
 
         # user chooses place to get data from
+        click.clear()
         print('Choose a location from the options below: ')
         print('1. Cambourne, United Kingdom (1987)')
         print('2. Heathrow, United Kingdom (1987)')
@@ -143,6 +146,7 @@ def generatedata(data1, data2):
             data2name = data2name + ' -'
 
         # user chooses what data to get
+        click.clear()
         print('Choose a parameter from the options below: ')
         print('1. Mean temperature')
         print('2. Total rainfall')
@@ -213,6 +217,7 @@ def generatedata(data1, data2):
                     data2.append(data)
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 4:
+            click.clear()
             print("1. Wind speed")
             print("2. Wind speed (Beufort conversion)")
             print("3. Wind gust")
@@ -351,6 +356,7 @@ def generatedata(data1, data2):
                     data2.append(data)
                     date2.append(sheet_ranges.cell(row=j, column=1).value)
         elif choice2 == 9:
+            click.clear()
             print("1. Wind direction (degrees)")
             print("2. Wind direction (compass)")
             print("3. Wind Gust direction (degrees)")
@@ -439,7 +445,7 @@ def generatedata(data1, data2):
     # debugging purposes
 
     if len(data1) != len(data2):
-        print("WARNING: Data sets are not the same length. This will cause an error when you make a graph.")
+        print("WARNING: Data sets are not the same length.")
 
 
     print('Data1: ' + str(data1))

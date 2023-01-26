@@ -1,7 +1,9 @@
 def askuser():
     from rich import print
     from rich import pretty
+    import click
     pretty.install()
+    click.clear()
     print('Choose a location from the options below: ')
     print('1. Cambourne, United Kingdom (1987)')
     print('2. Heathrow, United Kingdom (1987)')
@@ -16,6 +18,7 @@ def askuser():
 
     location_num = int(input('Enter your choice: '))
 
+    click.clear()
     print('Choose a parameter from the options below: ')
     print('1. Mean temperature')
     print('2. Total rainfall')
@@ -29,12 +32,14 @@ def askuser():
     data_type_num = int(input('Enter your choice: '))
 
     if data_type_num == 4:
+        click.clear()
         print("1. Wind speed")
         print("2. Wind speed (Beufort conversion)")
         print("3. Wind gust")
         bonus = int(input('Enter your choice: '))
 
     elif data_type_num == 9:
+        click.clear()
         print("1. Wind direction (degrees)")
         print("2. Wind direction (compass)")
         print("3. Wind Gust direction (degrees)")

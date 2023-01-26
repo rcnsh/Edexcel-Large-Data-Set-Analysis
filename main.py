@@ -3,8 +3,10 @@ from modules.generatedata import generatedata
 from modules.askuser import askuser
 from modules.calculateaverages import calculate_averages
 from modules.analysegenerateddata import analyse_generated_data
+from modules.readanalysis import read_analysis
 from rich import print
 from rich import pretty
+import click
 pretty.install()
 
 data1 = []
@@ -20,9 +22,11 @@ while True:
 
     choice = input('Enter your choice: ')
     if choice == '1':
+        click.clear()
         userResponse = askuser()
         viewdata(userResponse[0], userResponse[1], userResponse[2])
     elif choice == '2':
+        click.clear()
         got_data = generatedata(data1, data2)
         data1 = got_data[0]
         data2 = got_data[1]
@@ -34,13 +38,16 @@ while True:
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
         else:
+            click.clear()
             calculate_averages(data1, data2, data1name, data2name)
     elif choice == '4':
         if len(data1) == 0 or len(data2) == 0:
             print('You need to generate data first')
         else:
+            click.clear()
             analyse_generated_data(data1, data2, data1name, data2name, date1, date2)
     elif choice == '5':
+        click.clear()
         read_analysis()
     elif choice == '6':
         break

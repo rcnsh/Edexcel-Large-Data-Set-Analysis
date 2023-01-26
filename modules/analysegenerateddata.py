@@ -5,7 +5,11 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
     import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
+    import click
     # date formatting
+    click.clear()
+    print("Reformatting dates and data")
+    print("This may take a while...")
 
     for i in range(len(date1)):
         date1[i] = str(date1[i])
@@ -21,7 +25,6 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         date1[i] = date1[i].replace('datetime.datetime(', '')
         date1[i] = date1[i].replace('0, 0)', '')
         date1[i] = date1[i].replace(' 00:00:00', '')
-        print(date1[i])
 
     for i in range(len(date2)):
         date2[i] = str(date2[i])
@@ -31,12 +34,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         date2[i] = date2[i].replace('datetime.datetime(', '')
         date2[i] = date2[i].replace('0, 0)', '')
         date2[i] = date2[i].replace(' 00:00:00', '')
-        print(date1[i])
-
-
-
-
-
+    click.clear()
     print("Choose a type of analysis:")
     print("1. Line graph (separate graphs")
     print("2. Bar chart")
