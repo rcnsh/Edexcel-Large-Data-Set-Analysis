@@ -3,7 +3,6 @@ import os.path
 
 def generatedata(data1, data2):
     from pathlib import Path
-    from modules.support.support import resource_path
     from rich import pretty
     from rich import print
     import click

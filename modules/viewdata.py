@@ -1,5 +1,4 @@
 def viewdata(location, type, bonus):
-    from modules.support.support import resource_path
     import os
     from pathlib import Path
     cwd = Path.cwd()
