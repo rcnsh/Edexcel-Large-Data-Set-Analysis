@@ -8,10 +8,10 @@ from rich import print
 from rich import pretty
 import click
 pretty.install()
-
 data1 = []
 data2 = []
 
+click.clear()
 while True:
     print('1. View data')
     print('2. Generate random data and save in memory')
