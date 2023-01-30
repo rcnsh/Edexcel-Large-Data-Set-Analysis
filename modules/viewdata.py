@@ -1,11 +1,15 @@
 def viewdata(location, type, bonus):
+    from modules.support.support import resource_path
+    import os
+    from pathlib import Path
+    cwd = Path.cwd()
     from rich import print
     from rich import pretty
     pretty.install()
     global sheet_ranges
     from modules import vars
     import openpyxl
-    wb = openpyxl.load_workbook(filename='data/large-dataset.xlsx')
+    wb = openpyxl.load_workbook(filename=os.path.join(cwd, 'large-dataset.xlsx'))
 
     if location == 1:
         sheet_ranges = wb[vars.CAMBOURNE1987]

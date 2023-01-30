@@ -1,4 +1,9 @@
+import os.path
+
+
 def generatedata(data1, data2):
+    from pathlib import Path
+    from modules.support.support import resource_path
     from rich import pretty
     from rich import print
     import click
@@ -10,7 +15,8 @@ def generatedata(data1, data2):
     data2name = ""
     from modules import vars
     import openpyxl
-    wb = openpyxl.load_workbook(filename='data/large-dataset.xlsx')
+    cwd = Path.cwd()
+    wb = openpyxl.load_workbook(filename=os.path.join(cwd, 'large-dataset.xlsx'))
     dataquantity = int(input('Enter the number of data points to generate: '))
     click.clear()
     offset = (183 // dataquantity) - 1

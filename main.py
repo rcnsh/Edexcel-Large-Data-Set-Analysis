@@ -1,3 +1,5 @@
+import os.path
+from pathlib import Path
 from modules.viewdata import viewdata
 from modules.generatedata import generatedata
 from modules.askuser import askuser
@@ -7,9 +9,19 @@ from modules.readanalysis import read_analysis
 from rich import print
 from rich import pretty
 import click
+import urllib.request
+cwd = Path.cwd()
 pretty.install()
 data1 = []
 data2 = []
+click.clear()
+
+url = "https://raw.githubusercontent.com/RCNOverwatcher/Edexcel-Large-Data-Set-Analysis/master/large-dataset.xlsx"
+if os.path.exists(os.path.join(cwd, 'large-dataset.xlsx')):
+    pass
+else:
+    print('Downloading spreadsheet...')
+    urllib.request.urlretrieve(url, os.path.join(cwd, 'large-dataset.xlsx'))
 
 click.clear()
 while True:

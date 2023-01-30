@@ -38,11 +38,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
     print("Choose a type of analysis:")
     print("1. Line graph (separate graphs")
     print("2. Bar chart")
-    print("3. Scatter plot")
-    print("4. Box plot")
-    print("5. Pie chart")
-    print("6. Histogram")
-    print("7. Exit")
+    print("3. Exit")
     ask = int(input(""))
     if ask == 1:
 
@@ -86,3 +82,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         fig.tight_layout()
         plt.gcf().autofmt_xdate()
         plt.show()
+
+    if ask == 3:
+        click.clear()
+        return 0
