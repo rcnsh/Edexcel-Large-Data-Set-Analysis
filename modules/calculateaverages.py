@@ -1,8 +1,10 @@
+
 def calculate_averages(data1, data2, data1name, data2name):
+    from click import clear
     from rich import print
     from rich import pretty
     pretty.install()
-    from statistics import median, mean, stdev, mode, correlation
+    from statistics import median, mean, stdev, mode, variance, pvariance, correlation
     data1 = [float(i) for i in data1]
     data2 = [float(i) for i in data2]
 
@@ -26,3 +28,10 @@ def calculate_averages(data1, data2, data1name, data2name):
     print(f'Standard deviation of {data2namepart2} at {data2namepart2}: ' + str(stdev(data2)))
     print(f'Mode of {data1namepart2} at {data1namepart1}: ' + str(mode(data1)))
     print(f'Mode of {data2namepart2} at {data2namepart1}: ' + str(mode(data2)))
+    print(f'Variance of {data1namepart2} at {data1namepart1}: ' + str(variance(data1)))
+    print(f'Variance of {data2namepart2} at {data2namepart1}: ' + str(variance(data2)))
+    print(f'Population variance of {data1namepart2} at {data1namepart1}: ' + str(pvariance(data1)))
+    print(f'Population variance of {data2namepart2} at {data2namepart1}: ' + str(pvariance(data2)))
+    print(f'Correlation of {data1namepart2} at {data1namepart1} and {data2namepart2} at {data2namepart1}: ' + str(correlation(data1, data2)))
+    wait = input("Press enter to continue...")
+    clear()

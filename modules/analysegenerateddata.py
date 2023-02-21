@@ -36,7 +36,7 @@ def analyse_generated_data(data1, data2, data1name, data2name, date1, date2):
         date2[i] = date2[i].replace(' 00:00:00', '')
     click.clear()
     print("Choose a type of analysis:")
-    print("1. Line graph (separate graphs")
+    print("1. Line graph (separate graphs)")
     print("2. Bar chart")
     print("3. Exit")
     ask = int(input(""))

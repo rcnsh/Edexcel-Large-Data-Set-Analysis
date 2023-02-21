@@ -16,9 +16,12 @@ def generatedata(data1, data2):
     import openpyxl
     cwd = Path.cwd()
     wb = openpyxl.load_workbook(filename=os.path.join(cwd, 'large-dataset.xlsx'))
-    dataquantity = int(input('Enter the number of data points to generate: '))
+    dataquantity = int(input('Enter the number of data points to generate (type 0 for a census): '))
     click.clear()
-    offset = (183 // dataquantity) - 1
+    if dataquantity == 0:
+        offset = 1
+    else:
+        offset = (184 // dataquantity) - 1
     data1 = []
     data2 = []
     data1name = ""
@@ -166,9 +169,9 @@ def generatedata(data1, data2):
         choice2 = int(input('Enter your choice: '))
         if choice2 == 1:
             if i == 0:
-                data1name = data1name + ' Mean temperature (C)'
+                data1name = data1name + ' temperature (C)'
             elif i == 1:
-                data2name = data2name + ' Mean temperature (C)'
+                data2name = data2name + ' temperature (C)'
             for j in range(7, 190, offset):
                 data = str(sheet_ranges['B' + str(j)].value)
                 if data == 'n/a':
